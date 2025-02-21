@@ -27,4 +27,4 @@ $ShortcutObj.WorkingDirectory = "C:\Program Files\Google\Chrome\Application"
 $ShortcutObj.Save()
 }
 
-Write-Host "1-100 个快捷方式已创建到 $SavePath，并已添加参数"
+Write-Host "创建成功，1-100 个快捷方式已创建到 $SavePath，并已添加参数"
