@@ -1,5 +1,5 @@
 # 目标文件夹路径
-$SavePath = "C:\Users\kkkmoat\Desktop\explore\lnk"
+$SavePath = "E:\chromemuli\lnk"
 
 # 确保目标文件夹存在（如果不存在则创建）
 if (!(Test-Path -Path $SavePath)) {
@@ -9,13 +9,13 @@ New-Item -ItemType Directory -Path $SavePath | Out-Null
 # 目标程序路径
 $TargetPath = "C:\Program Files\Google\Chrome\Application\chrome.exe"
 
-# 循环创建 1-100 个快捷方式
-for ($i = 1; $i -le 100; $i++) {
-$ShortcutName = "App$i.lnk"
+# 循环创建 1-300 个快捷方式
+for ($i = 1; $i -le 300; $i++) {
+$ShortcutName = "$i.lnk"
 $Shortcut = "$SavePath\$ShortcutName"
 
 # 生成随编号变化的参数
-$Arguments = " --user-data-dir=`"C:\Users\kkkmoat\Desktop\explore\chrome\$i`""
+$Arguments = " --user-data-dir=`"E:\chromemuli\chromeData\$i`""
 
 $WScriptShell = New-Object -ComObject WScript.Shell
 $ShortcutObj = $WScriptShell.CreateShortcut($Shortcut)
@@ -27,4 +27,4 @@ $ShortcutObj.WorkingDirectory = "C:\Program Files\Google\Chrome\Application"
 $ShortcutObj.Save()
 }
 
-Write-Host "创建成功，1-100 个快捷方式已创建到 $SavePath，并已添加参数"
+Write-Host "创建成功，1-300 个快捷方式已创建到 $SavePath，并已添加参数"
